@@ -186,9 +186,8 @@ const ContactForm = () => {
             );
             setTimeout(() => {
               window.scrollTo(0, 0);
-              window.location.reload()
+              window.location.reload();
             }, 3000);
-           
 
             // Clear the form after successful submission
             setFormDataMobile({
@@ -398,7 +397,10 @@ const ContactForm = () => {
 
       {/* mobile view */}
 
-      <div id="contact-form" className=" d-block d-md-block d-sm-block d-lg-block d-xl-none contact-mobile-form   p-3 ">
+      <div
+        id="contact-form"
+        className=" d-block d-md-block d-sm-block d-lg-block d-xl-none contact-mobile-form   p-3 "
+      >
         <div className="contact-links-banner  rounded-5 mx-auto col-6  pt-4 mb-4 mt-4 ">
           <div className="blur-img-contact-form p-3 p-md-5 pt-md-3 pt-0">
             <h2 className="text-white pt-2">Reach Us at</h2>

@@ -152,19 +152,23 @@ export default function HomePage() {
   return (
     <>
       <section
-      
+      // ref={(element) => {
+      //   if (element) {
+      //     sections.current.push(element);
+      //   }
+      // }}
       >
         <div className="">
           <div className="home-banner-kaash position-relative">
             <div>
               <video
-                id="background-video"
+                //id="background-video"
                 className="w-100 inline video-wrapper video-player hero-video-design"
-                playsInline
-                controls={false}
-                muted
-                autoPlay
-                loop
+                //playsInline
+                //controls={false}
+                //muted
+                //autoPlay
+                //loop
               >
                 <source
                   src={require("./Images/video-new.mp4")}
@@ -183,7 +187,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}} id="ourstory" className=" nav-link">
+      <section id="ourstory" className="ourstory-background nav-link">
         <div className="scroll-animation pb-xl-5 pt-3 pb-5  ">
           <div
             className={`container pt-xl-5 pb-xl-5  mt-lg-1 mt-2 zoom-content `}
@@ -209,9 +213,7 @@ export default function HomePage() {
                 <p
                   className="text-heading-orange mt-2 mb-1 mt-lg-4 mt-md-4"
                   ref={ref}
-                
-                style={{color:"#00FFEF"}}>
-
+                >
                   Deepcytes
                 </p>
                 <h1 id="section-id">Our Story Unfolded</h1>
@@ -241,10 +243,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}} id="ourbrands">
+      <section id="ourbrands">
         <div
           // style={{ height: "800px" }}
-          className="  scroll-animation"
+          className="unique-offerings  scroll-animation"
         >
           <OurBrands
             className={` mt-lg-1 mt-2 zoom-content `}
@@ -252,38 +254,96 @@ export default function HomePage() {
           />
         </div>
       </section>
-      <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}}>
-      <div className="Deepcytes-certification pb-5" >
-      
-      <h1 className="text-white">Deepcytes Certification and Professional Badges</h1>
-      <p>
-        Digital badges are the best tool to highlight your Deepcytes certifications and achievements
-        on your online profiles, resumes and more. Join the group of Deepcytes certified professionals
-        who are already sharing their skills this way.
-      </p>
-      <p>
-        Deepcytes partners with Credly to deliver its Professional badges through the Acclaim platform.
-        Deepcytes’s Professional badge collection can be viewed on the 
-        <a href="https://www.credly.com" target="_blank" rel="noopener noreferrer" style={{color:"#00FFEF"}}> Credly platform</a>.
-      </p>
-    </div>
-    </section>
-    <div style={{height:"400px"}} class="parallax"></div>
-    
 
-     
+      <section
+        id="blogs"
 
-      <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}}>
-        <div className="container mb-0   pb-lg-0 pt-lg-5 pb-5 ">
+        // style={{
+        //   height: "600px",
+
+        // }}
+      >
+        <div className="container pt-lg-5">
+          <div className="d-flex flex-wrap pt-5 pt-xl-0 justify-content-between mb-lg-0 mb-2 mb-xl-1">
+            <h1 className="px-lg-3 px-md-3">Blogs & News</h1>
+            <div className="col-xl-3 col-lg-4 pe-xl-4 pe-md-3">
+              <button
+                className="text-dark w-100 p-2 bg-white shadow border-muted border rounded fw-semibold  "
+                onClick={handleViewClick}
+              >
+                {" "}
+                View All <FaArrowRightLong />
+              </button>
+            </div>
+          </div>
+
+          <div className="d-flex flex-wrap  justify-content-between">
+            {BlogsData.slice(0, 3).map((data, index) => (
+              <div className="col-12 mb-lg-0 mb-4 mb-lg-5 mt-md-0  mb-md-4 pe-md-3 px-md-3 col-xl-4 mt-xl-0 col-lg-6 px-xl-4  col-md-6 pe-lg-4 px-lg-4">
+                <div
+                  onClick={() => handleReadMoreClick(index)}
+                  className="text-dark cursor-pointer card card-view-height "
+                >
+                  <div className=" ">
+                    <img
+                      src={data.img}
+                      alt=""
+                      height={200}
+                      width="100%"
+                      className="rounded-top"
+                    />
+                  </div>
+                  <div
+                    style={{
+                      backgroundColor: "#f5f7fa",
+                      height: "100%",
+                    }}
+                    className="card-body rounded-bottom  "
+                  >
+                    <h4 className="h-50 ">{data.title}</h4>
+                    <div className="d-flex flex-wrap justify-content-between">
+                      <span className="text-secondary mt-3 mt-xl-4 mt-xxl-4  mt-md-3">
+                        {data.date}
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    style={{ backgroundColor: "#f5f7fa" }}
+                    className="card-footer border-0 mt-0 pt-0"
+                  >
+                    <button
+                      onClick={() => handleReadMoreClick(index)}
+                      className={` rounded  w-100 p-2 border-0 bg-white shadow-on-hover`}
+                    >
+                      Read More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+
+      // style={
+      //   {
+      //      height: "600px",
+
+      //   }
+      // }
+      >
+        <div className="container mt-lg-5 mt-3 mb-3 pb-lg-1 pt-lg-3">
           <h6
-            className={`text-center text-white client-higlights-heading ${
+            className={`text-center client-higlights-heading ${
               inViewHighLights && "fade-in"
             }`}
             ref={refHighLights}
           >
             CLIENT HIGHLIGHTS
           </h6>
-          
+          <hr />
           <Swiper
             modules={[
               Navigation,
@@ -299,7 +359,7 @@ export default function HomePage() {
             // pagination={{ clickable: true }}
             // onActiveIndexChange={handleSlideChange}
             // centeredSlides
-            className=""
+            className="my-md-4"
             // navigation
             breakpoints={{
               0: { slidesPerView: 2 },
@@ -322,34 +382,18 @@ export default function HomePage() {
               </SwiperSlide>
             ))}
           </Swiper>
-         
+          <hr />
         </div>
-        
       </section>
-      <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}}>
-      <div className="Deepcytes-certification  pb-5" >
-      
-      <h1 className="text-white pt-5">Deepcytes Certification and Professional Badges</h1>
-      <p>
-        Digital badges are the best tool to highlight your Deepcytes certifications and achievements
-        on your online profiles, resumes and more. Join the group of Deepcytes certified professionals
-        who are already sharing their skills this way.
-      </p>
-      <p>
-        Deepcytes partners with Credly to deliver its Professional badges through the Acclaim platform.
-        Deepcytes’s Professional badge collection can be viewed on the 
-        <a href="https://www.credly.com" target="_blank" rel="noopener noreferrer" style={{color:"#00FFEF"}}> Credly platform</a>.
-      </p>
-    </div>
-    </section>
-      {/* <section
+
+      <section
       id="/contact"
       >
         <div className="p-xl-5 px-0 pt-0 pt-lg-5  contact-form mt-5">
           <ContactForm />
 
         </div>
-      </section> */}
+      </section>
 
       {/* <Swiper
         direction={"vertical"}

@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-node_modules
 /.pnp
 .pnp.js
 
@@ -11,7 +10,6 @@ node_modules
 
 # production
 /build
-build.zip
 
 # misc
 .DS_Store
@@ -25,3 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 
+node_modules
