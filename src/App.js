@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import AboutUs from "./Pages/AboutUs/About";
 import Blogs from "./Pages/Blogs/Blog";
 import MostPopular from "./Pages/Blogs/Components/MostPopular";
+import Login from "./Pages/Login/Login";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/most-popular/:index" element={<MostPopular />} />
+            <Route path="/login" element={<Login />} />
+            
           </Routes>
          <Footer />
       </BrowserRouter>
