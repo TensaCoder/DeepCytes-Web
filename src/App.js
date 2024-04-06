@@ -14,6 +14,7 @@ import AboutUs from "./Pages/AboutUs/About";
 import Blogs from "./Pages/Blogs/Blog";
 import MostPopular from "./Pages/Blogs/Components/MostPopular";
 import Login from "./Pages/Login/Login";
+import DataForm from "./Pages/DataForm/DataForm";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/most-popular/:index" element={<MostPopular />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/data-entry" element={<DataForm />} />
             
           </Routes>
          <Footer />
