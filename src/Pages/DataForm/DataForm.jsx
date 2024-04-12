@@ -255,24 +255,66 @@ function DataForm() {
                 <label htmlFor="inputInvolvement" className="ms-1">
                   Involvement
                 </label>
-                <select
-                  id="inputInvolvement"
-                  className="form-control"
-                  value={involvement}
-                  onChange={(e) => {
-                    setInvolvement(e.target.value);
-                    setInvolvementValidate(true);
-                  }}
-                >
-                  <option value="">Choose...</option>
-                  <option>Course</option>
-                  <option>Internship</option>
-                  <option>Employee</option>
-                  <option>All of these</option>
-                </select>
-                {involvementValidate ? (
-                  <p></p>
-                ) : (
+                <div className="checkbox-grid">
+                  <label>
+                    <input
+                      type="checkbox"
+                      value="Course"
+                      className="me-1"
+                      checked={involvement.includes("Course")}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setInvolvement([...involvement, "Course"]);
+                        } else {
+                          setInvolvement(
+                            involvement.filter((item) => item !== "Course")
+                          );
+                        }
+                        setInvolvementValidate(true);
+                      }}
+                    />
+                    Course
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      value="Internship"
+                      className="me-1"
+                      checked={involvement.includes("Internship")}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setInvolvement([...involvement, "Internship"]);
+                        } else {
+                          setInvolvement(
+                            involvement.filter((item) => item !== "Internship")
+                          );
+                        }
+                        setInvolvementValidate(true);
+                      }}
+                    />
+                    Internship
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      value="Employee"
+                      className="me-1"
+                      checked={involvement.includes("Employee")}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setInvolvement([...involvement, "Employee"]);
+                        } else {
+                          setInvolvement(
+                            involvement.filter((item) => item !== "Employee")
+                          );
+                        }
+                        setInvolvementValidate(true);
+                      }}
+                    />
+                    Employee
+                  </label>
+                </div>
+                {!involvementValidate && (
                   <span className="text-danger">Cannot be blank</span>
                 )}
               </div>
