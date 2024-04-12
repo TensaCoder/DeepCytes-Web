@@ -54,6 +54,21 @@ function DataForm() {
   const [employmentAreas, setEmploymentAreas] = useState([]);
   const [recommendations, setRecommendations] = useState("");
   const [selectedBadges, setSelectedBadges] = useState([]);
+
+  // Validation useStates for all inputs
+  const [idValidate, setIdValidate] = useState(true);
+  const [nameValidate, setNameValidate] = useState(true);
+  const [dobValidate, setDobValidate] = useState(true);
+  const [involvementValidate, setInvolvementValidate] = useState(true);
+  const [coursesValidate, setCoursesValidate] = useState(true);
+  const [internshipDurationValidate, setInternshipDurationValidate] =
+    useState(true);
+  const [internshipDomainsValidate, setInternshipDomainsValidate] =
+    useState(true);
+  const [employmentDurationValidate, setEmploymentDurationValidate] =
+    useState(true);
+  const [employmentAreasValidate, setEmploymentAreasValidate] = useState(true);
+  const [recommendationsValidate, setRecommendationsValidate] = useState(true);
   const [badgesValidation, setBadgesValidation] = useState(true);
 
   const handleCourseAdd = (course) => {
@@ -75,21 +90,78 @@ function DataForm() {
     }
   };
 
-  const checkValidation = () =>{
+  const checkValidation = () => {
+    //Validate ID
+    if (id == null || id.length !== 10) {
+      setIdValidate(false);
+      return false;
+    }
 
-    
+    //Validate name
+    if (!name || name.trim() === "") {
+      setNameValidate(false);
+      return false;
+    }
+
+    //Validate DOB
+    if (dob == null || dob.trim() === "") {
+      setDobValidate(false);
+      return false;
+    }
+
+    //Validate Involvement
+    if (!involvement || involvement.length === 0) {
+      setInvolvementValidate(false);
+      return false;
+    }
+
+    // Validate Internship Duration (if not null and is only integer)
+    // if (
+    //   internshipDuration.trim() !== ""
+    // ) {
+    //   console.log(isNaN(parseInt(internshipDuration)));
+    //   setInternshipDurationValidate(false);
+    //   return false;
+    // }
+
+    if (internshipDuration === "") {
+      setInternshipDurationValidate(false);
+      return false;
+    }
+
+    // const internshipDurationAsNumber = parseInt(internshipDuration);
+    // if (isNaN(internshipDurationAsNumber) || internshipDurationAsNumber <= 0 || !Number.isInteger(internshipDurationAsNumber)) {
+    //   setInternshipDurationValidate(false);
+    //   return false;
+    // }
+
+    // if (isNaN(internshipDuration) || internshipDuration <= 0 || !Number.isInteger(internshipDuration)) {
+    //   setInternshipDurationValidate(false);
+    //   return false;
+    // }
+
+    // Validate Employment Duration (if not null and is only integer)
+    if (employmentDuration === "") {
+      setEmploymentDurationValidate(false);
+      return false;
+    }
 
     // Validate badges
     if (selectedBadges.length === 0) {
       // alert("Please select at least one badge.");
       setBadgesValidation(false);
-      return;
+      return false;
     }
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     // Call checkValidation
+    let isValid = checkValidation();
+    if (isValid === false) {
+      return;
+    }
 
     // Handle form submission
     console.log("Form submitted:", {
@@ -123,10 +195,18 @@ function DataForm() {
                   id="inputID"
                   placeholder="ID"
                   value={id}
-                  onChange={(e) => setId(e.target.value)}
-                  maxLength="10"
-                  required
+                  onChange={(e) => {
+                    setId(e.target.value);
+                    setIdValidate(true);
+                  }}
                 />
+                {idValidate ? (
+                  <p></p>
+                ) : (
+                  <span className="text-danger">
+                    Cannot be blank and must be 10 characters
+                  </span>
+                )}
               </div>
               <div className="form-group my-3 col">
                 <label htmlFor="inputName" className="ms-1">
@@ -138,9 +218,16 @@ function DataForm() {
                   id="inputName"
                   placeholder="Name"
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
+                  onChange={(e) => {
+                    setName(e.target.value);
+                    setNameValidate(true);
+                  }}
                 />
+                {nameValidate ? (
+                  <p></p>
+                ) : (
+                  <span className="text-danger">Cannot be blank</span>
+                )}
               </div>
             </div>
             <div className="row my-2">
@@ -153,9 +240,16 @@ function DataForm() {
                   className="form-control"
                   id="inputDOB"
                   value={dob}
-                  onChange={(e) => setDob(e.target.value)}
-                  required
+                  onChange={(e) => {
+                    setDob(e.target.value);
+                    setDobValidate(true);
+                  }}
                 />
+                {dobValidate ? (
+                  <p></p>
+                ) : (
+                  <span className="text-danger">Cannot be blank</span>
+                )}
               </div>
               <div className="form-group col">
                 <label htmlFor="inputInvolvement" className="ms-1">
@@ -165,8 +259,10 @@ function DataForm() {
                   id="inputInvolvement"
                   className="form-control"
                   value={involvement}
-                  onChange={(e) => setInvolvement(e.target.value)}
-                  required
+                  onChange={(e) => {
+                    setInvolvement(e.target.value);
+                    setInvolvementValidate(true);
+                  }}
                 >
                   <option value="">Choose...</option>
                   <option>Course</option>
@@ -174,6 +270,11 @@ function DataForm() {
                   <option>Employee</option>
                   <option>All of these</option>
                 </select>
+                {involvementValidate ? (
+                  <p></p>
+                ) : (
+                  <span className="text-danger">Cannot be blank</span>
+                )}
               </div>
             </div>
             <div className="form-group my-3">
@@ -184,7 +285,9 @@ function DataForm() {
               {badgesValidation ? (
                 <p></p>
               ) : (
-                <span className="text-danger">At least one badge is needed</span>
+                <span className="text-danger">
+                  At least one badge is needed
+                </span>
               )}
               {selectedBadges.map((badge, index) => (
                 <div key={index} className="d-flex align-items-center my-3">
@@ -254,9 +357,17 @@ function DataForm() {
                   id="inputInternshipDuration"
                   placeholder="Duration"
                   value={internshipDuration}
-                  onChange={(e) => setInternshipDuration(e.target.value)}
-                  min="1"
+                  onChange={(e) => {
+                    let num = parseInt(e.target.value);
+                    if (!isNaN(num)) setInternshipDuration(num);
+                    setInternshipDurationValidate(true);
+                  }}
                 />
+                {internshipDurationValidate ? (
+                  <p></p>
+                ) : (
+                  <span className="text-danger">Integer number required</span>
+                )}
               </div>
               <div className="form-group col-6">
                 <label htmlFor="inputInternshipDomains" className="ms-1">
@@ -307,9 +418,19 @@ function DataForm() {
                   id="inputEmploymentDuration"
                   placeholder="Duration"
                   value={employmentDuration}
-                  onChange={(e) => setEmploymentDuration(e.target.value)}
-                  min="1"
+                  // onChange={(e) => setEmploymentDuration(e.target.value)}
+                  onChange={(e) => {
+                    let num = parseInt(e.target.value);
+                    if (!isNaN(num)) setEmploymentDuration(num);
+                    setEmploymentDurationValidate(true);
+                  }}
+                  // min="1"
                 />
+                {employmentDurationValidate ? (
+                  <p></p>
+                ) : (
+                  <span className="text-danger">Integer number required</span>
+                )}
               </div>
               <div className="form-group col">
                 <label htmlFor="inputEmploymentAreas" className="ms-1">
