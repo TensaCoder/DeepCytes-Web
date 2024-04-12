@@ -1,0 +1,65 @@
+body {
+  background-image: url("../../images/Data-entry-BG.png");
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover;
+  /* z-index: 111111; */
+  /* background: rgb(2, 0, 36);
+  background: linear-gradient(
+    113deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 1, 28, 1) 18%,
+    rgba(0, 255, 239, 1) 49%,
+    rgba(0, 1, 28, 1) 84%
+  ); */
+}
+
+.main-cover{
+  height: 105vh;
+}
+
+.glass {
+  background: transparent;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 10px rgba (0, 0, 0, 0.2);
+  /* width: 50rem; */
+}
+
+.scrollable-div{
+  /* height: 48rem;  */
+  height: 93vh; 
+  overflow-y: auto;
+}
+
+/* 
+.form-group {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-out;
+  pointer-events: none;
+  color: #888;
+}
+
+.form-group input:focus + .form-group label,
+.form-group input:not(:placeholder-shown) + .form-group label {
+  top: 0;
+  font-size: 12px;
+  color: #333;
+} */
