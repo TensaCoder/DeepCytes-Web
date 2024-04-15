@@ -36,8 +36,7 @@ const Footer = () => {
   };
 
   const handleContactClick = () => {
-    navigate("/contact");
-    console.log("Footer contact  clicked!");
+    window.scrollTo(0, 2900);
   };
 
   const location = useLocation();
@@ -85,35 +84,34 @@ const Footer = () => {
                 </p>
               </div>
               <div className="d-flex flex-wrap fw-semibold ms-4  ms-lg-none mt-md-0   mt-lg-0">
-                {/* <h6
+                <h6
                   onClick={handleHomeScroll}
                   className={`text-decoration-none fw-semibold cursor-pointer nav-links-text-footer nav-link-style me-3 me-lg-0 px-lg-4`}
                 >
                   Home
-                </h6> */}
-
-                {location.pathname === "/contact" ||
+                </h6>
+                {location.pathname === "/Forms" ||
                 location.pathname === "/about-us" ? (
                   <>
-                    {/* <h6
+                    <h6
                       onClick={handleStoryHideClick}
                       className={`text-decoration-none fw-semibold cursor-pointer nav-links-text-footer nav-link-style me-3 me-lg-0 px-lg-4`}
                     >
                       Search page
-                    </h6> */}
+                    </h6>
 
-                    {/* <h6
+                    <h6
                       onClick={handlesFormHideClick}
                       className={`text-decoration-none fw-semibold cursor-pointer nav-links-text-footer nav-link-style me-3 me-lg-0 px-lg-4`}
                     >
                       Forms
-                    </h6> */}
-                    {/* <h6
+                    </h6>
+                    <h6
                       onClick={handleContactHideClick}
                       className={`text-decoration-none fw-semibold cursor-pointer nav-links-text-footer  nav-link-style me-3 me-lg-0 px-lg-4`}
                     >
                       Contact Us
-                    </h6> */}
+                    </h6>
                   </>
                 ) : (
                   <>
@@ -220,7 +218,7 @@ const Footer = () => {
             {location.pathname === "/Forms" ||
             location.pathname === "/about-us" ? (
               <>
-                {/* <a
+                <a
                   href="/#ourstory"
                   // onClick={handleStoryHideClick}
                   className={`text-decoration-none cursor-pointer nav-links-text-footer fw-semibold  on-hover nav-link-style me-3 me-lg-0 px-lg-4`}
@@ -238,7 +236,7 @@ const Footer = () => {
                   className={`text-decoration-none cursor-pointer nav-links-text-footer on-hover fw-semibold  nav-link-style me-3 me-lg-0 px-lg-4`}
                 >
                   Contact Us
-                </h6> */}
+                </h6>
               </>
             ) : (
               <>
