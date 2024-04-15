@@ -114,8 +114,8 @@ const ContactUs = () => {
   return (
     <>
       <div className="forBackground ">
-        <div className="container pt-lg-5 pt-4 pb-lg-5">
-          <div className=" d-flex flex-wrap  justify-content-between height">
+        <div className="container pt-lg-5 pt-4 pb-lg-5 height">
+          <div className=" d-flex flex-wrap  justify-content-between ">
             {/* --------------------DETAILS SECTION-------------------- */}
             <div className="col-lg-6 mt-md-4 col-12 pe-lg-4 mb-4">
               <div className="rounded-4 backgroundImage p-5 h-100 text-light">
@@ -170,7 +170,7 @@ const ContactUs = () => {
             {/* --------------------------FORM SECTION--------------------- */}
 
             <div className="col-lg-6 col-12 mt-md-4 mb-4 px-lg-4">
-              <div className="text-white contact-form-bg border rounded-4 p-5 height">
+              <div className="text-white contact-form-bg border rounded-4 p-5 ">
                 <h5>Please enter your details below</h5>
                 <form
                   onSubmit={(e) => {

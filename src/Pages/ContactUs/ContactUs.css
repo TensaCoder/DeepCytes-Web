@@ -1,5 +1,5 @@
 .height {
-  height: 550px;
+  height: 45rem;
 }
 
 .forBackground .coolabrateUs {
@@ -73,6 +73,8 @@
   }
 }
 
+/* Input button css Code */
+
 .inputBox {
   position: relative;
   width: auto;
@@ -114,41 +116,3 @@
   border-radius: 0.2em;
 }
 
-/* 
-.inputBox {
-  position: relative;
-  width: 410px;
-  margin-bottom: 30px;
-}
-
-.inputBox input,
-.inputBox textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1.25px solid #a4a4a4;
-  background: #1d2b3a;
-  border-radius: 5px;
-  outline: none;
-  color: white;
-  font-size: 1rem;
-}
-
-.inputBox label {
-  position: absolute;
-  left: 0;
-  padding: 10px;
-  pointer-events: none;
-  font-size: 1rem;
-  color: #a4a4a4;
-  text-transform: uppercase;
-  transition: 0.5s;
-}
-
-.inputBox input:valid ~ label,
-.inputBox input:focus ~ label,
-.inputBox textarea:valid ~ label,
-.inputBox textarea:focus ~ label {
-  transform: translateX(10px) translateY(-7px);
-  font-size: 0.65rem;
-}
- */
