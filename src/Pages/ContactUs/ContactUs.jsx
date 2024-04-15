@@ -118,7 +118,7 @@ const ContactUs = () => {
           <div className=" d-flex flex-wrap  justify-content-between height">
             {/* --------------------DETAILS SECTION-------------------- */}
             <div className="col-lg-6 mt-md-4 col-12 pe-lg-4 mb-4">
-              <div className="rounded-3 backgroundImage p-5 h-100">
+              <div className="rounded-4 backgroundImage p-5 h-100 text-light">
                 <h3 className="mt-3">Get in touch</h3>
                 <p className="mt-3">
                   We are here to help you design and print anything you can
@@ -142,7 +142,7 @@ const ContactUs = () => {
                     <div className="mt-3">
                       <a
                         href="tel:+91 8983349963"
-                        className="text-dark text-decoration-none cursor-pointer"
+                        className="text-light text-decoration-none cursor-pointer"
                       >
                         +91 8983349963
                       </a>
@@ -150,7 +150,7 @@ const ContactUs = () => {
                     <div className="pt-4 cursor-pointer">
                       <a
                         href="mailto:kaashstudio@gmail.com"
-                        className="text-dark text-decoration-none "
+                        className="text-light text-decoration-none "
                       >
                         kaashstudio@gmail.com
                       </a>
@@ -170,7 +170,7 @@ const ContactUs = () => {
             {/* --------------------------FORM SECTION--------------------- */}
 
             <div className="col-lg-6 col-12 mt-md-4 mb-4 px-lg-4">
-              <div className="bg-white contact-form border rounded-3 p-5 height">
+              <div className="text-white contact-form-bg border rounded-4 p-5 height">
                 <h5>Please enter your details below</h5>
                 <form
                   onSubmit={(e) => {
@@ -185,6 +185,7 @@ const ContactUs = () => {
                       name="fullName"
                       value={formData.fullName || ""}
                       onChange={handleChange}
+                      
                     />
                     <label htmlFor="fullName" className="labeLine">
                       Full Name

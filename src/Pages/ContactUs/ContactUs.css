@@ -12,14 +12,24 @@
     
 }
 
-.forBackground .backgroundImage {
-  background-image: url("../../images/blurimage.png");
+.backgroundImage {
+  /* background-image: url("../../images/blurimage.png"); */
+  /* background-image: url("../../images/DC\ BG\ 1.jpeg"); */
+  background: transparent;
+  backdrop-filter: blur(30px);
+
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  border: 0.1rem white solid;
+  border-radius: 1rem;
+
+  box-shadow: 0 0 10px rgba (0, 0, 0, 0.9);
 }
 
 .forBackground {
-  background-image: url("../../images/Content.png");
+  /* background-image: url("../../images/Content.png"); */
+  background-image: url("../../images/Data-entry-BG.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -47,6 +57,10 @@
   color: black;
 }
 
+.contact-form-bg{
+  background: transparent;
+}
+
 @media screen and (max-width: 280px) {
   .forBackground .backgroundImage {
     padding: 2rem !important;
@@ -61,6 +75,48 @@
 
 .inputBox {
   position: relative;
+  width: auto;
+  padding-bottom: 1rem ;
+}
+
+.inputBox input,
+.inputBox textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* background: #1d2b3a; */
+  background: transparent;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  font-size: 1em;
+}
+
+.inputBox label {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: 0.75s;
+}
+
+/* .inputBox input:valid ~ label, */
+.inputBox textarea:focus ~ label,
+.inputBox input:focus ~ label{
+  color:#1d2b3a;
+  background-color: #00dfc4;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em; 
+  padding: 0 10px; 
+  border-radius: 0.2em;
+}
+
+/* 
+.inputBox {
+  position: relative;
   width: 410px;
   margin-bottom: 30px;
 }
@@ -70,10 +126,10 @@
   width: 100%;
   padding: 10px;
   border: 1.25px solid #a4a4a4;
-  /* background: #1d2b3a; */
+  background: #1d2b3a;
   border-radius: 5px;
   outline: none;
-  /* color: white; */
+  color: white;
   font-size: 1rem;
 }
 
@@ -95,139 +151,4 @@
   transform: translateX(10px) translateY(-7px);
   font-size: 0.65rem;
 }
-
-/* .box .inputBox {
-  position: relative;
-}
-
-.box .inputBox input {
-  width: 93%;
-  padding: 0.625rem 10px;
-  font-size: 1rem;
-  letter-spacing: 0.062rem;
-  margin-bottom: 1.875rem;
-  border: 1px solid #ccc;
-  background: transparent;
-  border-radius: 4px;
-  
-}
-
-.box .inputBox label {
-  position: absolute;
-  top: 0;
-  left: 10px;
-  padding: 0.625rem 0;
-  font-size: 1rem;
-  color: grey;
-  pointer-events: none;
-  transition: 0.3s;
-}
-
-.box .inputBox input:focus ~ label,
-.box .inputBox input:valid ~ label,
-.box .inputBox input:not([value=""]) ~ label 
-{
-  top: -1.125rem;
-  left: 10px;
-  color: #1a73e8;
-  font-size: 0.75rem;
-  background-color: white;
-  height: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.box .inputBox input:focus {
-  outline: none;
-  border: 2px solid #1a73e8;
-}
-.box input[type="submit"] {
-  border: none;
-  outline: none;
-  color: #fff;
-  background-color: #1a73e8;
-  padding: 0.625rem 1.25rem;
-  cursor: pointer;
-  border-radius: 0.312rem;
-  font-size: 1rem;
-  float: right;
-}
-
-.box input[type="submit"]:hover {
-  background-color: #287ae6;
-  box-shadow: 0 1px 1px 0 rgba(66,133,244,0.45), 0 1px 3px 1px rgba(66,133,244,0.3);
-}            
-
-
-
-
-.box .inputBox input:focus ~ label,
-.box .inputBox input:valid ~ label,
-.box .inputBox input:not([value=""]) ~ label {
-    top: -1.125rem;
-    left: 10px;
-    color: #1a73e8;
-    font-size: 0.75rem;
-    background-color: white;
-    height: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-.box .inputBox input:focus {
-    outline: none;
-    border: 2px solid #1a73e8;
-}
-
-
-
-.box .inputBox textarea:focus ~ label,
-.box .inputBox textarea:valid ~ label,
-.box .inputBox textarea:not([value=""]) ~ label {
-  top: -1.125rem;
-  left: 10px;
-  color: #1a73e8;
-  font-size: 0.75rem;
-  background-color: white;
-  height: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.box .inputBox textarea:focus {
-  outline: none;
-  border: 2px solid #1a73e8;
-}
-.box textarea[type="submit"] {
-  border: none;
-  outline: none;
-  color: #fff;
-  background-color: #1a73e8;
-  padding: 0.625rem 1.25rem;
-  cursor: pointer;
-  border-radius: 0.312rem;
-  font-size: 1rem;
-  float: right;
-}
-
-.box textarea[type="submit"]:hover {
-  background-color: #287ae6;
-  box-shadow: 0 1px 1px 0 rgba(66,133,244,0.45), 0 1px 3px 1px rgba(66,133,244,0.3);
-}            
-
-
-.box .inputBox textarea:focus ~ label,
-.box .inputBox textarea:valid ~ label,
-.box .inputBox textarea:not([value=""]) ~ label {
-    top: -1.125rem;
-    left: 10px;
-    color: #1a73e8;
-    font-size: 0.75rem;
-    background-color: white;
-    height: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-.box .inputBox textarea:focus {
-    outline: none;
-    border: 2px solid #1a73e8;
-} */
+ */
