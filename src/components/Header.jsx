@@ -1,3 +1,6 @@
+// 
+
+
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 // import Button from "react-bootstrap/Button";
@@ -127,17 +130,17 @@ const Header = () => {
   // hide header //
 
   const handleOurStoryHideClick = () => {
-    setShowOffcanvas(false);
+    setShowOffcanvas(false)
     navigate("/");
     window.scrollTo(0, 800);
   };
   const handleOurBrandsHideClick = () => {
-    setShowOffcanvas(false);
+    setShowOffcanvas(false)
     navigate("/");
     window.scrollTo(0, 1250);
   };
   const handleDeepcytesHideClick = () => {
-    setShowOffcanvas(false);
+    setShowOffcanvas(false)
     navigate("/");
     window.scrollTo(0, 1900);
   };
@@ -148,19 +151,19 @@ const Header = () => {
 
   // pages navigations //
   const handlePageStoryClick = () => {
-    setShowOffcanvas(false);
+    setShowOffcanvas(false)
     navigate("/");
     window.scrollTo(0, 800);
   };
 
   const handlePageBrandsClick = () => {
-    setShowOffcanvas(false);
+    setShowOffcanvas(false)
     navigate("/");
     window.scrollTo(0, 800);
   };
 
   const handlePageDeepcytesClick = () => {
-    setShowOffcanvas(false);
+    setShowOffcanvas(false)
     navigate("/");
     window.scrollTo(0, 800);
   };
@@ -366,22 +369,39 @@ const Header = () => {
                     </>
                   )}
                 </Nav>
+                <div className="d-block d-lg-block d-xl-none d-xxl-none ">
+                  {location.pathname !== "/Deepcytes" &&
+                    location.pathname !== "/about-us" && (
+                      <>
+                        <button
+                          // href="/#contact"
+                          className={`text-decoration-none  cursor-pointer nav-links-text  fw-semibold  px-3 px-md-3  px-lg-5 border-0 bg-white`}
+                          onClick={handleContactClick}
+                          // onClick={
+                          //   !isMobileView
+                          //     ? handleContactClick
+                          //     : handleContactCanvasClick
+                          // }
+                        >
+                          <FaPhone size={25} /> &nbsp; Contact Us
+                        </button>
+                      </>
+                    )}
+                </div>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
             <div className="d-none  d-lg-none d-xl-block mt-md-0 mt-4 mt-xl-0">
-              {/* {location.pathname !== "/Deepcytes" &&
+              {location.pathname !== "/Deepcytes" &&
                 location.pathname !== "/about-us" && (
-                  
-                )} */}
-
-              <>
-                <button
-                  onClick={handleContactClick}
-                  className=" p-2  fw-semibold cursor-pointer d-none d-md-none d-lg-none d-xl-block d-xxl-block  blue-button-kaash border-0 text-blue  px-xl-5 rounded px-md-3 px-5 mt-0"
-                >
-                  Contact Us
-                </button>
-              </>
+                  <>
+                    <button
+                      onClick={handleContactClick}
+                      className=" p-2  fw-semibold cursor-pointer d-none d-md-none d-lg-none d-xl-block d-xxl-block  blue-button-kaash border-0 text-blue  px-xl-5 rounded px-md-3 px-5 mt-0"
+                    >
+                      Contact Us
+                    </button>
+                  </>
+                )}
             </div>
           </Navbar>
         </div>
