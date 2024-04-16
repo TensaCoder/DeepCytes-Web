@@ -277,7 +277,7 @@ const Header = () => {
                         }
                       >
                         {showOffcanvas ? <MdHistoryEdu size={25} /> : ""} &nbsp;
-                        Serach page
+                        Search page
                       </a>
                       <hr className="d-block d-xl-none d-md-block d-lg-block" />
                       <a
@@ -337,7 +337,7 @@ const Header = () => {
                         className={` border-0  text-decoration-none fw-semibold  nav-links-text cursor-pointer   px-lg-4  me-4 me-lg-0`}
                       >
                         {showOffcanvas ? <MdHistoryEdu size={25} /> : ""} &nbsp;
-                        Serach page
+                        Search page
                       </a>
                       <hr className="d-block d-xl-none d-md-block d-lg-block" />
 
