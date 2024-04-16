@@ -18,7 +18,7 @@ function MultiValueInput({ placeholder, onAdd, labelName }) {
   };
 
   return (
-    <div className="d-flex align-items-center mb-3">
+    <div className="d-flex align-items-center">
       <input
         type="text"
         className="me-2"
@@ -26,9 +26,7 @@ function MultiValueInput({ placeholder, onAdd, labelName }) {
         value={value}
         onChange={handleChange}
       />
-      <label className="">
-        {labelName}
-      </label>
+      <label className="">{labelName}</label>
       <button
         type="button"
         className="btn btn-secondary"
@@ -188,7 +186,7 @@ function DataForm() {
         <div className="container text-light d-flex justify-content-center glass scrollable-div w-50 pt-4">
           <form onSubmit={handleSubmit} className="w-75">
             <div className="row">
-              <div className="inputBox col">
+              <div className={"inputBox col " + (id ? "floating-active" : "")}>
                 <input
                   type="text"
                   // className="form-control"
@@ -205,14 +203,14 @@ function DataForm() {
                 </label>
 
                 {idValidate ? (
-                  <p></p>
+                  <span></span>
                 ) : (
                   <span className="text-danger">
                     Cannot be blank and must be 10 characters
                   </span>
                 )}
               </div>
-              <div className="inputBox col">
+              <div className={"inputBox col " + (name ? "floating-active" : "")}>
                 <input
                   type="text"
                   // className="form-control"
@@ -228,14 +226,14 @@ function DataForm() {
                   Name
                 </label>
                 {nameValidate ? (
-                  <p></p>
+                  <span></span>
                 ) : (
                   <span className="text-danger">Cannot be blank</span>
                 )}
               </div>
             </div>
             <div className="row mt-2">
-              <div className="inputBox col" id="DOB">
+              <div className="inputBox col floating-active" id="DOB">
                 <input
                   type="date"
                   className="DOB"
@@ -251,7 +249,7 @@ function DataForm() {
                 </label>
 
                 {dobValidate ? (
-                  <p></p>
+                  <span></span>
                 ) : (
                   <span className="text-danger">Cannot be blank</span>
                 )}
@@ -322,24 +320,21 @@ function DataForm() {
                 )}
               </div>
             </div>
-            <div className="inputBox my-3">
+            <div className={"inputBox col " + (selectedBadges.length ? "floating-active" : "")}>
               <MultiValueInput
                 placeholder="Badge"
                 onAdd={handleBadgeAdd}
                 labelName="Badges Achieved"
               />
-              {/* <label htmlFor="inputBadges" className="ms-1">
-                Badges Achieved
-              </label> */}
               {badgesValidation ? (
-                <p></p>
+                <span></span>
               ) : (
                 <span className="text-danger">
                   At least one badge is needed
                 </span>
               )}
               {selectedBadges.map((badge, index) => (
-                <div key={index} className="d-flex align-items-center my-3">
+                <div key={index} className="d-flex align-items-center my-2">
                   <input
                     type="text"
                     className="form-control me-2"
@@ -365,11 +360,15 @@ function DataForm() {
                 </div>
               ))}
             </div>
-            <div className="inputBox my-3">
+            <div className={"inputBox col mt-3 " + (courses.length ? "floating-active" : "")}>
               {/* <label htmlFor="inputCourses" className="ms-1">
                 Courses Completed
               </label> */}
-              <MultiValueInput placeholder="Course" onAdd={handleCourseAdd} labelName="Courses Completed"/>
+              <MultiValueInput
+                placeholder="Course"
+                onAdd={handleCourseAdd}
+                labelName="Courses Completed"
+              />
               {courses.map((course, index) => (
                 <div key={index} className="d-flex align-items-center my-3">
                   <input
@@ -395,8 +394,8 @@ function DataForm() {
                 </div>
               ))}
             </div>
-            <div className="row mt-4">
-              <div className="inputBox col">
+            <div className="row mt-2">
+              <div className={"inputBox col " + (internshipDuration ? "floating-active" : "")}>
                 <input
                   type="number"
                   // className="form-control"
@@ -413,12 +412,12 @@ function DataForm() {
                   I Duration(m)
                 </label>
                 {internshipDurationValidate ? (
-                  <p></p>
+                  <span></span>
                 ) : (
                   <span className="text-danger">Integer number required</span>
                 )}
               </div>
-              <div className="inputBox col">
+              <div className={"inputBox col " + (internshipDomains.length ? "floating-active" : "")}>
                 <MultiValueInput
                   placeholder="Domain"
                   onAdd={handleInternshipDomainAdd}
@@ -452,8 +451,8 @@ function DataForm() {
                 ))}
               </div>
             </div>
-            <div className="row my-3">
-              <div className="inputBox col">
+            <div className="row mt-2">
+              <div className={"inputBox col " + (employmentDuration ? "floating-active" : "")}>
                 <input
                   type="number"
                   // className="form-control"
@@ -472,12 +471,12 @@ function DataForm() {
                   E Duration(m)
                 </label>
                 {employmentDurationValidate ? (
-                  <p></p>
+                  <span></span>
                 ) : (
                   <span className="text-danger">Integer number required</span>
                 )}
               </div>
-              <div className="inputBox col">
+              <div className={"inputBox col " + (employmentAreas.length ? "floating-active" : "")}>
                 {/* <label htmlFor="inputEmploymentAreas" className="ms-1">
                   E Areas
                 </label> */}
@@ -514,7 +513,7 @@ function DataForm() {
                 ))}
               </div>
             </div>
-            <div className="inputBox my-3">
+            <div className={"inputBox mt-2 " + (id ? "floating-active" : "")}>
               <textarea
                 // className="form-control"
                 id="inputRecommendations"
@@ -527,7 +526,7 @@ function DataForm() {
               </label>
             </div>
 
-            <div className="d-flex justify-content-center my-5">
+            <div className="d-flex justify-content-center my-3">
               <button type="submit" className="btn btn-primary">
                 Submit
               </button>

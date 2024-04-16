@@ -15,7 +15,7 @@ body {
 }
 
 .main-cover{
-  height: 105vh;
+  height: 95vh;
 }
 
 .glass {
@@ -29,7 +29,7 @@ body {
 
 .scrollable-div{
   /* height: 48rem;  */
-  height: 95.8vh; 
+  height: 80vh; 
   overflow-y: auto;
 }
 
@@ -114,7 +114,7 @@ body {
 }
 
 
-#DOB input ~ label{
+.floating-active input ~ label{
   color:#1d2b3a;
   background-color: #00dfc4;
   transform: translateX(10px) translateY(-7px);
@@ -123,3 +123,7 @@ body {
   border-radius: 0.2em;
 }
 
+
+#DOB input{
+  color-scheme: dark;
+}
