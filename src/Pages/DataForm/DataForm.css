@@ -86,9 +86,8 @@ body {
   font-size: 1em;
   color: rgba(255, 255, 255, 0.25);
   text-transform: uppercase;
-  transition: 0.5bs;
-}
-
+  transition: 0.5s;
+} 
 /* .inputBox label:nth-child(1){
   color:#1d2b3a;
   background-color: #00dfc4;
@@ -99,9 +98,6 @@ body {
 } */
 
 
-/* .inputBox input:focus{
-  /* color: #1d2b3a; */
-/* } */
 
 /* .inputBox input:valid ~ label, */
 .inputBox textarea:focus~label,
