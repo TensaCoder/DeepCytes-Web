@@ -116,3 +116,14 @@
   border-radius: 0.2em;
 }
 
+
+.floating-active input ~ label,
+.floating-active textarea ~ label
+{
+  color:#1d2b3a;
+  background-color: #00dfc4;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em; 
+  padding: 0 10px; 
+  border-radius: 0.2em;
+}

@@ -179,13 +179,16 @@ const ContactUs = () => {
                   }}
                   id="contactForm"
                 >
-                  <div className="inputBox">
+                  <div
+                    className={
+                      "inputBox " + (formData.fullName ? "floating-active" : "")
+                    }
+                  >
                     <input
                       type="text"
                       name="fullName"
                       value={formData.fullName || ""}
                       onChange={handleChange}
-                      
                     />
                     <label htmlFor="fullName" className="labeLine">
                       Full Name
@@ -193,7 +196,9 @@ const ContactUs = () => {
                     <small className="error text-danger" id="nameError"></small>
                   </div>
 
-                  <div className="inputBox">
+                  <div className={
+                      "inputBox " + (formData.contactNo ? "floating-active" : "")
+                    }>
                     <input
                       type="text"
                       name="contactNo"
@@ -210,13 +215,14 @@ const ContactUs = () => {
                     ></small>
                   </div>
 
-                  <div className="inputBox">
+                  <div className={
+                      "inputBox " + (formData.email ? "floating-active" : "")
+                    }>
                     <input
                       type="text"
                       name="email"
                       value={formData.email || ""}
                       onChange={handleChange}
-                      
                     />
                     <label htmlFor="email" className="labeLine">
                       Email Address
@@ -227,7 +233,9 @@ const ContactUs = () => {
                     ></small>
                   </div>
 
-                  <div className="inputBox">
+                  <div className={
+                      "inputBox " + (formData.message ? "floating-active" : "")
+                    }>
                     <textarea
                       type="text"
                       name="message"
