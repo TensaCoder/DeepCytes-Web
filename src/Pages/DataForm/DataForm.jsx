@@ -513,7 +513,7 @@ function DataForm() {
                 ))}
               </div>
             </div>
-            <div className={"inputBox mt-2 " + (id ? "floating-active" : "")}>
+            <div className={"inputBox mt-2 " + (recommendations ? "floating-active" : "")}>
               <textarea
                 // className="form-control"
                 id="inputRecommendations"
