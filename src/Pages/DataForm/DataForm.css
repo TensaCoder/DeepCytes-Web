@@ -1,7 +1,7 @@
 body {
   background-image: url("../../images/Data-entry-BG.png");
   background-repeat: no-repeat;
-  background-position:center;
+  background-position: center;
   background-size: cover;
   /* z-index: 111111; */
   /* background: rgb(2, 0, 36);
@@ -14,9 +14,9 @@ body {
   ); */
 }
 
-.main-cover{
+/* .main-cover{
   height: 95vh;
-}
+} */
 
 .glass {
   background: transparent;
@@ -27,9 +27,9 @@ body {
   /* width: 50rem; */
 }
 
-.scrollable-div{
+.scrollable-div {
   /* height: 48rem;  */
-  height: 80vh; 
+  height: 80vh;
   overflow-y: auto;
 }
 
@@ -43,12 +43,12 @@ body {
   display: block;
 }
 
-.DOB{
+.DOB {
   color: white;
 
 }
 
-.involvement{
+.involvement {
   position: relative;
   top: -19px;
 }
@@ -60,7 +60,7 @@ body {
 .inputBox {
   position: relative;
   width: auto;
-  padding-bottom: 1rem ;
+  padding-bottom: 1rem;
 }
 
 .inputBox input,
@@ -87,7 +87,8 @@ body {
   color: rgba(255, 255, 255, 0.25);
   text-transform: uppercase;
   transition: 0.5bs;
-} 
+}
+
 /* .inputBox label:nth-child(1){
   color:#1d2b3a;
   background-color: #00dfc4;
@@ -98,32 +99,43 @@ body {
 } */
 
 
-.inputBox input:focus{
+/* .inputBox input:focus{
   /* color: #1d2b3a; */
-}
+/* } */
 
 /* .inputBox input:valid ~ label, */
-.inputBox textarea:focus ~ label,
-.inputBox input:focus ~ label{
-  color:#1d2b3a;
+.inputBox textarea:focus~label,
+.inputBox input:focus~label {
+  color: #1d2b3a;
   background-color: #00dfc4;
   transform: translateX(10px) translateY(-7px);
-  font-size: 0.65em; 
-  padding: 0 10px; 
+  font-size: 0.65em;
+  padding: 0 10px;
   border-radius: 0.2em;
 }
 
 
-.floating-active input ~ label{
-  color:#1d2b3a;
+.floating-active input~label {
+  color: #1d2b3a;
   background-color: #00dfc4;
   transform: translateX(10px) translateY(-7px);
-  font-size: 0.65em; 
-  padding: 0 10px; 
+  font-size: 0.65em;
+  padding: 0 10px;
   border-radius: 0.2em;
 }
 
 
-#DOB input{
+#DOB input {
   color-scheme: dark;
+}
+
+/* Only Mobile Code */
+@media screen and (max-width: 820px) {
+  .scrollable-div {
+    width: 330px !important;
+  }
+
+  .flexible-row {
+    display: block;
+  }
 }

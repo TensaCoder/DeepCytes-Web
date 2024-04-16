@@ -185,7 +185,7 @@ function DataForm() {
       <div className="main-cover py-5">
         <div className="container text-light d-flex justify-content-center glass scrollable-div w-50 pt-4">
           <form onSubmit={handleSubmit} className="w-75">
-            <div className="row">
+            <div className="row flexible-row">
               <div className={"inputBox col " + (id ? "floating-active" : "")}>
                 <input
                   type="text"
@@ -232,7 +232,7 @@ function DataForm() {
                 )}
               </div>
             </div>
-            <div className="row mt-2">
+            <div className="row mt-2 flexible-row">
               <div className="inputBox col floating-active" id="DOB">
                 <input
                   type="date"
@@ -394,7 +394,7 @@ function DataForm() {
                 </div>
               ))}
             </div>
-            <div className="row mt-2">
+            <div className="row mt-2 flexible-row">
               <div className={"inputBox col " + (internshipDuration ? "floating-active" : "")}>
                 <input
                   type="number"
@@ -451,7 +451,7 @@ function DataForm() {
                 ))}
               </div>
             </div>
-            <div className="row mt-2">
+            <div className="row mt-2 flexible-row">
               <div className={"inputBox col " + (employmentDuration ? "floating-active" : "")}>
                 <input
                   type="number"
