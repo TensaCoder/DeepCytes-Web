@@ -3,7 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import "./DataForm.css";
 
-function MultiValueInput({ placeholder, onAdd }) {
+function MultiValueInput({ placeholder, onAdd, labelName }) {
   const [value, setValue] = useState("");
 
   const handleChange = (e) => {
@@ -21,11 +21,14 @@ function MultiValueInput({ placeholder, onAdd }) {
     <div className="d-flex align-items-center mb-3">
       <input
         type="text"
-        className="form-control me-2"
-        placeholder={placeholder}
+        className="me-2"
+        // placeholder={placeholder}
         value={value}
         onChange={handleChange}
       />
+      <label className="">
+        {labelName}
+      </label>
       <button
         type="button"
         className="btn btn-secondary"
@@ -182,24 +185,25 @@ function DataForm() {
   return (
     <>
       <div className="main-cover py-5">
-        <div className="container text-light d-flex justify-content-center glass scrollable-div w-50">
+        <div className="container text-light d-flex justify-content-center glass scrollable-div w-50 pt-4">
           <form onSubmit={handleSubmit} className="w-75">
             <div className="row">
-              <div className="form-group my-3 col">
-                <label htmlFor="inputID" className="ms-1">
-                  ID
-                </label>
+              <div className="inputBox col">
                 <input
                   type="text"
-                  className="form-control"
+                  // className="form-control"
                   id="inputID"
-                  placeholder="ID"
+                  // placeholder="ID"
                   value={id}
                   onChange={(e) => {
                     setId(e.target.value);
                     setIdValidate(true);
                   }}
                 />
+                <label htmlFor="inputID" className="ms-1">
+                  ID
+                </label>
+
                 {idValidate ? (
                   <p></p>
                 ) : (
@@ -208,21 +212,21 @@ function DataForm() {
                   </span>
                 )}
               </div>
-              <div className="form-group my-3 col">
-                <label htmlFor="inputName" className="ms-1">
-                  Name
-                </label>
+              <div className="inputBox col">
                 <input
                   type="text"
-                  className="form-control"
+                  // className="form-control"
                   id="inputName"
-                  placeholder="Name"
+                  // placeholder="Name"
                   value={name}
                   onChange={(e) => {
                     setName(e.target.value);
                     setNameValidate(true);
                   }}
                 />
+                <label htmlFor="inputName" className="ms-1">
+                  Name
+                </label>
                 {nameValidate ? (
                   <p></p>
                 ) : (
@@ -230,14 +234,11 @@ function DataForm() {
                 )}
               </div>
             </div>
-            <div className="row my-2">
-              <div className="form-group col">
-                <label htmlFor="inputDOB" className="ms-1">
-                  Date of Birth
-                </label>
+            <div className="row mt-2">
+              <div className="inputBox col" id="DOB">
                 <input
                   type="date"
-                  className="form-control"
+                  className="DOB"
                   id="inputDOB"
                   value={dob}
                   onChange={(e) => {
@@ -245,16 +246,18 @@ function DataForm() {
                     setDobValidate(true);
                   }}
                 />
+                <label htmlFor="inputDOB" className="ms-1">
+                  Date of Birth
+                </label>
+
                 {dobValidate ? (
                   <p></p>
                 ) : (
                   <span className="text-danger">Cannot be blank</span>
                 )}
               </div>
-              <div className="form-group col">
-                <label htmlFor="inputInvolvement" className="ms-1">
-                  Involvement
-                </label>
+              <div className="col involvement">
+                <label htmlFor="inputInvolvement">Involvement</label>
                 <div className="checkbox-grid">
                   <label>
                     <input
@@ -319,11 +322,15 @@ function DataForm() {
                 )}
               </div>
             </div>
-            <div className="form-group my-3">
-              <label htmlFor="inputBadges" className="ms-1">
+            <div className="inputBox my-3">
+              <MultiValueInput
+                placeholder="Badge"
+                onAdd={handleBadgeAdd}
+                labelName="Badges Achieved"
+              />
+              {/* <label htmlFor="inputBadges" className="ms-1">
                 Badges Achieved
-              </label>
-              <MultiValueInput placeholder="Badge" onAdd={handleBadgeAdd} />
+              </label> */}
               {badgesValidation ? (
                 <p></p>
               ) : (
@@ -358,11 +365,11 @@ function DataForm() {
                 </div>
               ))}
             </div>
-            <div className="form-group my-3">
-              <label htmlFor="inputCourses" className="ms-1">
+            <div className="inputBox my-3">
+              {/* <label htmlFor="inputCourses" className="ms-1">
                 Courses Completed
-              </label>
-              <MultiValueInput placeholder="Course" onAdd={handleCourseAdd} />
+              </label> */}
+              <MultiValueInput placeholder="Course" onAdd={handleCourseAdd} labelName="Courses Completed"/>
               {courses.map((course, index) => (
                 <div key={index} className="d-flex align-items-center my-3">
                   <input
@@ -389,15 +396,12 @@ function DataForm() {
               ))}
             </div>
             <div className="row mt-4">
-              <div className="form-group col-6">
-                <label htmlFor="inputInternshipDuration" className="ms-1">
-                  Internship Duration (m)
-                </label>
+              <div className="inputBox col">
                 <input
                   type="number"
-                  className="form-control"
+                  // className="form-control"
                   id="inputInternshipDuration"
-                  placeholder="Duration"
+                  // placeholder="Duration"
                   value={internshipDuration}
                   onChange={(e) => {
                     let num = parseInt(e.target.value);
@@ -405,22 +409,21 @@ function DataForm() {
                     setInternshipDurationValidate(true);
                   }}
                 />
+                <label htmlFor="inputInternshipDuration" className="ms-1">
+                  I Duration(m)
+                </label>
                 {internshipDurationValidate ? (
                   <p></p>
                 ) : (
                   <span className="text-danger">Integer number required</span>
                 )}
               </div>
-              <div className="form-group col-6">
-                <label htmlFor="inputInternshipDomains" className="ms-1">
-                  Internship Areas / Domains
-                </label>
-
+              <div className="inputBox col">
                 <MultiValueInput
                   placeholder="Domain"
                   onAdd={handleInternshipDomainAdd}
+                  labelName="I Domains"
                 />
-
                 {internshipDomains.map((domain, index) => (
                   <div key={index} className="d-flex align-items-center my-2">
                     <input
@@ -450,15 +453,12 @@ function DataForm() {
               </div>
             </div>
             <div className="row my-3">
-              <div className="form-group col">
-                <label htmlFor="inputEmploymentDuration" className="ms-1">
-                  Employment Duration (m)
-                </label>
+              <div className="inputBox col">
                 <input
                   type="number"
-                  className="form-control"
+                  // className="form-control"
                   id="inputEmploymentDuration"
-                  placeholder="Duration"
+                  // placeholder="Duration"
                   value={employmentDuration}
                   // onChange={(e) => setEmploymentDuration(e.target.value)}
                   onChange={(e) => {
@@ -468,19 +468,23 @@ function DataForm() {
                   }}
                   // min="1"
                 />
+                <label htmlFor="inputEmploymentDuration" className="ms-1">
+                  E Duration(m)
+                </label>
                 {employmentDurationValidate ? (
                   <p></p>
                 ) : (
                   <span className="text-danger">Integer number required</span>
                 )}
               </div>
-              <div className="form-group col">
-                <label htmlFor="inputEmploymentAreas" className="ms-1">
-                  Employment Areas
-                </label>
+              <div className="inputBox col">
+                {/* <label htmlFor="inputEmploymentAreas" className="ms-1">
+                  E Areas
+                </label> */}
                 <MultiValueInput
                   placeholder="Area"
                   onAdd={handleEmploymentAreaAdd}
+                  labelName="E Areas"
                 />
                 {employmentAreas.map((area, index) => (
                   <div key={index} className="d-flex align-items-center my-2">
@@ -510,17 +514,17 @@ function DataForm() {
                 ))}
               </div>
             </div>
-            <div className="form-group my-3">
-              <label htmlFor="inputRecommendations" className="ms-1">
-                Recommendations
-              </label>
+            <div className="inputBox my-3">
               <textarea
-                className="form-control"
+                // className="form-control"
                 id="inputRecommendations"
                 rows="3"
                 value={recommendations}
                 onChange={(e) => setRecommendations(e.target.value)}
               ></textarea>
+              <label htmlFor="inputRecommendations" className="ms-1">
+                Recommendations
+              </label>
             </div>
 
             <div className="d-flex justify-content-center my-5">
