@@ -138,4 +138,8 @@ body {
   .flexible-row {
     display: block;
   }
+
+  .inputBox label {
+    font-size: 14px;
+  }
 }
