@@ -216,7 +216,7 @@ const Footer = () => {
             <section className="d-flex  custom-padding">
             <div className="mx-2  ">
                 <a
-                  href="https://www.instagram.com/kaashstudio/?igsh=MXl3bDNjaHNuYmxw"
+                  href="https://www.instagram.com/deepcytes/"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: '#E4405F' }}
@@ -247,7 +247,7 @@ const Footer = () => {
 
               <div className="mx-2 ">
                 <a
-                  href="https://www.linkedin.com/company/kaash-studio/?originalSubdomain=in"
+                  href="https://www.linkedin.com/company/deepcytes/"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{color:"#0077b5"}}
