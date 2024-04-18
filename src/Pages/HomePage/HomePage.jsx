@@ -255,7 +255,7 @@ export default function HomePage() {
       <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}}>
       <div className="Deepcytes-certification pb-5" >
       
-      <h1 style={{color:"#00FFEF"}}>Deepcytes Certification and Professional Badges</h1>
+      <h1 style={{color:"#00FFEF", fontSize:"2.2rem"}}>Deepcytes Certification and Professional Badges</h1>
       <p style={{color:"white",marginBottom: '40px',marginTop: '40px',maxWidth:'2000px',}}>
         Digital badges are the best tool to highlight your Deepcytes certifications and achievements
         on your online profiles, resumes and more. Join the group of Deepcytes certified professionals
@@ -329,7 +329,7 @@ export default function HomePage() {
       <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}}>
       <div className="Deepcytes-certification  pb-5" >
       
-      <h1 style={{color:"#00FFEF",marginTop:'40px'}}>Deepcytes Certification and Professional Badges</h1>
+      <h1 style={{color:"#00FFEF",marginTop:'40px' , fontSize:"2.2rem"}}>Deepcytes Certification and Professional Badges</h1>
       <p style={{color:"white",marginBottom: '40px',marginTop: '40px',maxWidth:'2000px',}}>
         Digital badges are the best tool to highlight your Deepcytes certifications and achievements
         on your online profiles, resumes and more. Join the group of Deepcytes certified professionals
