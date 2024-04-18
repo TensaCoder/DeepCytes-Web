@@ -15,7 +15,8 @@ const OurBrands = ({ zoomScaleBrand }) => {
   }, []);
 
   const Images = {
-    image1: new URL("../Images/category-am.png", import.meta.url).href,
+    // image1: new URL("../Images/category-am.png", import.meta.url).href,
+    image1: new URL("../Images/Hackathon.jpeg", import.meta.url).href,
     image1Hover: new URL("../Images/am.png", import.meta.url).href,
     image2: new URL("../Images/explore-category.png", import.meta.url).href,
     // image2Hover: new URL("../images/kanishk.png", import.meta.url).href,
@@ -67,7 +68,11 @@ const OurBrands = ({ zoomScaleBrand }) => {
               </div>
               <div className="back rounded">
                 <img src={Images.image1Hover} alt="" className=" img-fluid" />
+                <div className="textcenter img-content">
+                Hackathon
+                </div>
                 <div className="text-center visit-button">
+                  
                   <a
                     href="https://theadditiveminds.com/"
                     target="_blank"
