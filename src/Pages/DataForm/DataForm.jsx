@@ -30,7 +30,7 @@ function MultiValueInput({ placeholder, onAdd, labelName }) {
       <label className="">{labelName}</label>
       <button
         type="button"
-        className="btn btn-secondary"
+        className="btn btn-color"
         style={{
           "--bs-btn-font-size": " 1.3rem",
           "--bs-btn-padding-x": "0.25rem",
