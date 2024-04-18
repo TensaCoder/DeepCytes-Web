@@ -1,5 +1,5 @@
 {
-  "name": "kaash",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,12 +10,8 @@
     "axios": "^1.6.8",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.2",
-    "cors": "^2.8.5",
     "dot-env": "^0.0.1",
-    "express": "^4.19.2",
     "framer-motion": "^11.0.22",
-    "mongoose": "^8.3.2",
-    "nodemon": "^3.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",

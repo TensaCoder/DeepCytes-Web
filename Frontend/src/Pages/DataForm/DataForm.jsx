@@ -174,7 +174,7 @@ function DataForm() {
         recommendations,
       };
 
-      const apiUrl = 'http://localhost:5000/data-entry/saveData';
+      const apiUrl = 'http://localhost:6000/data-entry/saveData';
 
       // Send a POST request to the backend
       const response = await axios.post(apiUrl, postData);
