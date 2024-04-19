@@ -78,7 +78,7 @@
 .inputBox textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.85); */
   /* background: #1d2b3a; */
   background: transparent;
   border-radius: 5px;

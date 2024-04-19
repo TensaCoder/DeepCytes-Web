@@ -149,17 +149,19 @@ const ContactUs = () => {
                     </div>
                     <div className="pt-4 cursor-pointer">
                       <a
-                        href="mailto:kaashstudio@gmail.com"
+                        href="mailto:aniket.b@deepcytes.io"
                         className="text-light text-decoration-none "
                       >
-                        kaashstudio@gmail.com
+                        aniket.b@deepcytes.io
                       </a>
                     </div>
                     <div className="pt-4">
                       <p style={{ textDecoration: "none" }} className="">
-                        Megacentre, Office no: N409,3rd Floor,Magarpatta{" "}
+                        Floor 10, Parinee Cresenzo,
                         <br className="d-md-block d-none" />
-                        Hadapsar,Pune solapur road,411013.
+                        G Block, Bandra Kurla Complex,
+                        <br className="d-md-block d-none" />
+                        Bandra East, Mumbai
                       </p>
                     </div>
                   </div>
@@ -196,9 +198,12 @@ const ContactUs = () => {
                     <small className="error text-danger" id="nameError"></small>
                   </div>
 
-                  <div className={
-                      "inputBox " + (formData.contactNo ? "floating-active" : "")
-                    }>
+                  <div
+                    className={
+                      "inputBox " +
+                      (formData.contactNo ? "floating-active" : "")
+                    }
+                  >
                     <input
                       type="text"
                       name="contactNo"
@@ -215,9 +220,11 @@ const ContactUs = () => {
                     ></small>
                   </div>
 
-                  <div className={
+                  <div
+                    className={
                       "inputBox " + (formData.email ? "floating-active" : "")
-                    }>
+                    }
+                  >
                     <input
                       type="text"
                       name="email"
@@ -233,9 +240,11 @@ const ContactUs = () => {
                     ></small>
                   </div>
 
-                  <div className={
+                  <div
+                    className={
                       "inputBox " + (formData.message ? "floating-active" : "")
-                    }>
+                    }
+                  >
                     <textarea
                       type="text"
                       name="message"
@@ -360,7 +369,8 @@ const ContactUs = () => {
                       submitValidation.forEmail ||
                       submitValidation.forMessage
                     }
-                    className="btn px-4 mt-3 px-sm-5 px-lg-3 text-white px-md-5 backgroundButton"
+                    // className="btn px-4 mt-3 px-sm-5 px-lg-3 text-white px-md-5 backgroundButton"
+                    className="btn btn-primary"
                   >
                     Send Message
                   </button>

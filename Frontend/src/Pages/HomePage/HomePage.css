@@ -868,10 +868,12 @@
 }
 /* DeepcytesCertification.css */
 .Deepcytes-certification {
-  max-width: 800px; /* Adjust width as needed */
+  max-width: 70rem; /* Adjust width as needed */
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif; /* Change the font-family as per your design */
+  text-align: justify;
+  font-size: 1.15rem;
 }
 
 .Deepcytes-certification h1 {

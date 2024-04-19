@@ -151,9 +151,7 @@ export default function HomePage() {
   // }, []);
   return (
     <>
-      <section
-      
-      >
+      <section>
         <div className="">
           <div className="home-banner-kaash position-relative">
             <div>
@@ -176,14 +174,17 @@ export default function HomePage() {
               id="text-overlay"
               className="col-11 col-md-10 col-lg-8 mx-auto home-heading-title fade-in"
             >
-              Deepcytes Cybersec World  <br />
-              
+              Deepcytes Cybersec World <br />
             </h1>
           </div>
         </div>
       </section>
 
-      <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}} id="ourstory" className=" nav-link">
+      <section
+        style={{ backgroundColor: "rgb(0, 1, 28)", color: "white" }}
+        id="ourstory"
+        className=" nav-link"
+      >
         <div className="scroll-animation pb-xl-5 pt-3 pb-5  ">
           <div
             className={`container pt-xl-5 pb-xl-5  mt-lg-1 mt-2 zoom-content `}
@@ -196,7 +197,7 @@ export default function HomePage() {
                 }`}
               >
                 <img
-                  src={require("./Images/a.webp")}
+                  src={require("./Images/DeepCytes_Logo_blue.png")}
                   alt=""
                   className="img-fluid our-story-image-group d-none d-md-block rounded"
                 />
@@ -209,25 +210,33 @@ export default function HomePage() {
                 <p
                   className="text-heading-orange mt-2 mb-1 mt-lg-4 mt-md-4"
                   ref={ref}
-                
-                style={{color:"#00FFEF"}}>
-
+                  style={{ color: "#00FFEF", fontSize: "3rem" }}
+                >
                   Deepcytes
                 </p>
-                <h1 id="section-id">Our Story Unfolded</h1>
+                <h1 id="section-id" style={{ fontSize: "1.75rem" }}>
+                  Our Story Unfolded
+                </h1>
                 <img
-                  src={require("./Images/a.webp")}
+                  src={require("./Images/DeepCytes_Logo_blue.png")}
                   alt=""
                   className="img-fluid d-md-none rounded my-2"
                 />
                 <p style={{ textAlign: "justify" }}>
-                  At Deepcytes, our journey is a testament to the power of
-                  passion and innovation. 
+                  At DeepCytes, we're more than just a cyber security company,
+                  we're a team of passionate innovators driven to secure your
+                  digital world.
                 </p>
                 <p style={{ textAlign: "justify" }}>
                   {" "}
-                  At our core, we are more than a company; we are creators,
-                  innovators, and visionaries. 
+                  Our expert-led investigations and training empower businesses
+                  of all sizes to combat cyber threats and navigate the
+                  ever-evolving landscape.
+                </p>
+                <p style={{ textAlign: "justify" }}>
+                  {" "}
+                  Partner with DeepCytes to fortify your defenses and achieve
+                  peace of mind.
                 </p>
                 {/* <button
                   className="text-dark p-2 px-4 rounded border-muted text-secondary knowmore-btn bg-white"
@@ -241,39 +250,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}} id="ourbrands">
+      <section
+        style={{ backgroundColor: "rgb(0, 1, 28)", color: "white" }}
+        id="ourbrands"
+      >
         <div
           // style={{ height: "800px" }}
           className="  scroll-animation"
         >
+
           <OurBrands
             className={` mt-lg-1 mt-2 zoom-content `}
             // style={{ transform: `scale(${zoomScale})` }}
           />
         </div>
       </section>
-      <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}}>
-      <div className="Deepcytes-certification pb-5" >
-      
-      <h1 style={{color:"#00FFEF"}}>Deepcytes Certification and Professional Badges</h1>
-      <p style={{color:"white",marginBottom: '40px',marginTop: '40px',maxWidth:'2000px',}}>
-        Digital badges are the best tool to highlight your Deepcytes certifications and achievements
-        on your online profiles, resumes and more. Join the group of Deepcytes certified professionals
-        who are already sharing their skills this way.
-      </p>
-      <p style={{color:"white"}}>
-        Deepcytes partners with Credly to deliver its Professional badges through the Acclaim platform.
-        Deepcytes’s Professional badge collection can be viewed on the 
-        <a href="https://www.credly.com" target="_blank" rel="noopener noreferrer" style={{color:"#00FFEF"}}> Credly platform</a>.
-      </p>
-    </div>
-    </section>
-    <div style={{height:"400px"}} class="parallax"></div>
-    
+      <section style={{ backgroundColor: "rgb(0, 1, 28)", color: "white" }}>
+        <div className="Deepcytes-certification pb-5">
+          <h1 style={{ color: "#00FFEF", fontSize: "2.2rem" }}>
+            Deepcytes Certification and Professional Badges
+          </h1>
+          <p
+            style={{
+              color: "white",
+              marginBottom: "40px",
+              marginTop: "40px",
+              maxWidth: "2000px",
+            }}
+          >
+            Digital badges are the best tool to highlight your Deepcytes
+            certifications and achievements on your online profiles, resumes and
+            more. Join the group of Deepcytes certified professionals who are
+            already sharing their skills this way.
+          </p>
+          <p style={{ color: "white" }}>
+            Deepcytes partners with Credly to deliver its Professional badges
+            through the Acclaim platform. Deepcytes’s Professional badge
+            collection can be viewed on the
+            <a
+              href="https://www.credly.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#00FFEF" }}
+            >
+              {" "}
+              Credly platform
+            </a>
+            .
+          </p>
+        </div>
+      </section>
+      <div style={{ height: "400px" }} class="parallax"></div>
 
-     
-
-      <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}}>
+      <section style={{ backgroundColor: "rgb(0, 1, 28)", color: "white" }}>
         <div className="container mb-0   pb-lg-0 pt-lg-5 pb-5 ">
           <h6
             className={`text-center text-white client-higlights-heading ${
@@ -283,7 +312,7 @@ export default function HomePage() {
           >
             CLIENT HIGHLIGHTS
           </h6>
-          
+
           <Swiper
             modules={[
               Navigation,
@@ -322,26 +351,45 @@ export default function HomePage() {
               </SwiperSlide>
             ))}
           </Swiper>
-         
         </div>
-        
       </section>
-      <section style={{backgroundColor:"rgb(0, 1, 28)",color:"white"}}>
-      <div className="Deepcytes-certification  pb-5" >
-      
-      <h1 style={{color:"#00FFEF",marginTop:'40px'}}>Deepcytes Certification and Professional Badges</h1>
-      <p style={{color:"white",marginBottom: '40px',marginTop: '40px',maxWidth:'2000px',}}>
-        Digital badges are the best tool to highlight your Deepcytes certifications and achievements
-        on your online profiles, resumes and more. Join the group of Deepcytes certified professionals
-        who are already sharing their skills this way.
-      </p>
-      <p style={{color:"white"}}>
-        Deepcytes partners with Credly to deliver its Professional badges through the Acclaim platform.
-        Deepcytes’s Professional badge collection can be viewed on the 
-        <a href="https://www.credly.com" target="_blank" rel="noopener noreferrer" style={{color:"#00FFEF"}}> Credly platform</a>.
-      </p>
-    </div>
-    </section>
+      <section style={{ backgroundColor: "rgb(0, 1, 28)", color: "white" }}>
+        <div className="Deepcytes-certification  pb-5">
+          <h1
+            style={{ color: "#00FFEF", marginTop: "40px", fontSize: "2.2rem" }}
+          >
+            Deepcytes Certification and Professional Badges
+          </h1>
+          <p
+            style={{
+              color: "white",
+              marginBottom: "40px",
+              marginTop: "40px",
+              maxWidth: "2000px",
+            }}
+          >
+            Digital badges are the best tool to highlight your Deepcytes
+            certifications and achievements on your online profiles, resumes and
+            more. Join the group of Deepcytes certified professionals who are
+            already sharing their skills this way.
+          </p>
+          <p style={{ color: "white" }}>
+            Deepcytes partners with Credly to deliver its Professional badges
+            through the Acclaim platform. Deepcytes’s Professional badge
+            collection can be viewed on the
+            <a
+              href="https://www.credly.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#00FFEF" }}
+            >
+              {" "}
+              Credly platform
+            </a>
+            .
+          </p>
+        </div>
+      </section>
       {/* <section
       id="/contact"
       >

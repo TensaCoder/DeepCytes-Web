@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import "./DataForm.css";
+import axios from 'axios';
 
 function MultiValueInput({ placeholder, onAdd, labelName }) {
   const [value, setValue] = useState("");
@@ -29,7 +30,7 @@ function MultiValueInput({ placeholder, onAdd, labelName }) {
       <label className="">{labelName}</label>
       <button
         type="button"
-        className="btn btn-secondary"
+        className="btn btn-color"
         style={{
           "--bs-btn-font-size": " 1.3rem",
           "--bs-btn-padding-x": "0.25rem",
@@ -155,7 +156,35 @@ function DataForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  // axios data handling
+  const fetchData = async () => {
+    try {
+      // Data you want to send to the backend
+      const postData = {
+        id,
+        name,
+        dob,
+        involvement,
+        selectedBadges,
+        courses,
+        internshipDuration,
+        internshipDomains,
+        employmentDuration,
+        employmentAreas,
+        recommendations,
+      };
+
+      const apiUrl = 'http://localhost:6000/data-entry/saveData';
+
+      // Send a POST request to the backend
+      const response = await axios.post(apiUrl, postData);
+      console.log(response);
+    } catch (error) {
+      console.error('Error: ', error);
+    }
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Call checkValidation
@@ -164,20 +193,49 @@ function DataForm() {
       return;
     }
 
+    fetchData();
     // Handle form submission
-    console.log("Form submitted:", {
-      id,
-      name,
-      dob,
-      involvement,
-      selectedBadges,
-      courses,
-      internshipDuration,
-      internshipDomains,
-      employmentDuration,
-      employmentAreas,
-      recommendations,
-    });
+    // console.log("Form submitted:", {
+    //   id,
+    //   name,
+    //   dob,
+    //   involvement,
+    //   selectedBadges,
+    //   courses,
+    //   internshipDuration,
+    //   internshipDomains,
+    //   employmentDuration,
+    //   employmentAreas,
+    //   recommendations,
+    // });
+
+    // try {
+    //   const response = await fetch('/saveData', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({
+    //       id,
+    //       name,
+    //       dob,
+    //       involvement,
+    //       selectedBadges,
+    //       courses,
+    //       internshipDuration,
+    //       internshipDomains,
+    //       employmentDuration,
+    //       employmentAreas,
+    //       recommendations,
+    //     }),
+    //   });
+    //   if (!response.ok) {
+    //     throw new Error('Unable to save data');
+    //   }
+    //   console.log('Form submitted:', await response.json());
+    // } catch (err) {
+    //   console.error('Error:', err);
+    // }
   };
 
   return (
@@ -465,7 +523,7 @@ function DataForm() {
                     if (!isNaN(num)) setEmploymentDuration(num);
                     setEmploymentDurationValidate(true);
                   }}
-                  // min="1"
+                // min="1"
                 />
                 <label htmlFor="inputEmploymentDuration" className="ms-1">
                   E Duration(m)

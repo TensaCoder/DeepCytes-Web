@@ -66,6 +66,10 @@
   box-shadow: 1px 1px 4px gray;
 }
 
+.img-content{
+  
+}
+
 @media (min-width: 1700px) and (max-width: 1920px) {
   .our-brands .flip-container {
     perspective: 1000px;
