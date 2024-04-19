@@ -15,6 +15,7 @@ import Blogs from "./Pages/Blogs/Blog";
 import MostPopular from "./Pages/Blogs/Components/MostPopular";
 import Login from "./Pages/Login/Login";
 import DataForm from "./Pages/DataForm/DataForm";
+import BadgesSearch from "./Pages/BadgesSearch/BadgesSearch";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
             <Route path="/most-popular/:index" element={<MostPopular />} />
             <Route path="/login" element={<Login />} />
             <Route path="/data-entry" element={<DataForm />} />
-            <Route path="/data-entry" element={<Baddges />} />
+            <Route path="/badges-search" element={<BadgesSearch />} />
             
           </Routes>
          <Footer />
