@@ -30,6 +30,7 @@ function App() {
             <Route path="/most-popular/:index" element={<MostPopular />} />
             <Route path="/login" element={<Login />} />
             <Route path="/data-entry" element={<DataForm />} />
+            <Route path="/data-entry" element={<Baddges />} />
             
           </Routes>
          <Footer />
